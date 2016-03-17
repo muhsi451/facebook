@@ -1,0 +1,231 @@
+<html>
+	<head>
+        <script>
+        function click_me()
+        {
+         f=document.getElementsByName("fname")[0].value;
+         l=document.getElementsByName("lname")[0].value;
+         e=document.getElementsByName("mailid")[0].value;
+         r=document.getElementsByName("rmailid")[0].value;
+         p=document.getElementsByName("pass")[0].value;
+         d=document.getElementsByName("day")[0].value;
+         m=document.getElementsByName("month")[0].value;
+         y=document.getElementsByName("year")[0].value;
+         g1=document.getElementsByName("sex")[0].checked;
+         g2=document.getElementsByName("sex")[1].checked;
+      //   alert("f="+f+"l="+l+"e="+e+"r="+r+"p="+p+"d="+d+"m="+m+"y="+y+"g1"+g1+"g2"+g2);
+         a=document.getElementById("a1");
+         b=document.getElementById("a2");
+         c=document.getElementById("a3");
+         h=document.getElementById("a4");
+         w=document.getElementById("a5");
+         v=document.getElementById("a6");
+         g=document.getElementById("a9");
+        // q=document.getElementById("a8");
+      var  er1=document.getElementsByName("mailid")[0].value;
+        var er2=document.getElementsByName("rmailid")[0].value;
+        alert("er1="+er1+"er2="+er2);
+        // alert("a="+a+"b="+b+"c="+c+"h="+h+"w="+w+"v="+v+"s="+s);
+        var em1=e.split("@");
+         x=em1.length;
+    
+     var  em2=em1[x-1].split(".");
+          z=em2.length;
+       // alert(em2.length);
+        // alert(em1[x-1].split("."));
+        var alpha=/^[a-zA-B0-9]+$/;
+        e1=document.getElementById("mail");
+        //name 
+        if(f=="")
+         {
+             a.innerHTML="enter your name";
+         }
+         else
+         a.innerHTML="";
+        //surename
+       if(l=="")
+        {
+            b.innerHTML="enter ur sure name";
+        }
+        else
+        b.innerHTML="";
+        //email
+        if(e=="")
+        {
+            c.innerHTML="enter ur emailid";
+        }
+         if(em1.length==1 || em2.length==1 || em1[x-1].length<=2 || em2[z-1].length<=2)
+        { 
+             c.innerHTML="invalid email id";
+        }
+             for(i=0,j=0;i<(em1.length)-1 || j<(em2.length)-1;i++,j++) 
+             {
+                 if(!alpha.test(em1[i]) || (!alpha.test(em2[j])))
+                  {
+                    c.innerHTML="invalid email id";
+                  } 
+             }   
+     //re-email  
+      if(r=="") 
+      {
+         h.innerHTML="RE-enter ur mail id"; 
+      }
+      else if(!er1.match(er2)) 
+      {
+          h.innerHTML="invalid mail id";
+      }
+      //password
+     if(p=="")
+      {
+       w.innerHTML="Enter ur new password";   
+      }
+      else if(p.length<6)
+      {
+          w.innerHTML="password must contain 6 characters";
+      }
+      //birthday
+      if(d=="day" ||m=="month" || y=="year")
+      {
+         v.innerHTML="enter your date of birth"; 
+      }
+      else
+      v.innerHTML="";
+      //gender
+      if(g1=="" && g2=="")  
+      {
+        g.innerHTML="select ur gender";  
+      }
+      else
+      g.innerHTML="";
+        
+        }
+   </script>
+   <style>
+    .x1
+    {
+       color:#ff0000  
+    } 
+    .x2
+    {
+       color:#ff0000  
+    }  
+    .x3
+    {
+       color:#ff0000  
+    }
+    .x4
+    {
+       color:#ff0000   
+    }
+    .x5
+    {
+       color:#ff0000   
+    }
+    .x6
+    {
+       color:#ff0000   
+    }
+    .x9
+    {
+       color:#ff0000   
+    }
+   </style>    
+	</head>
+		<body>
+            <form name"facebook" method="post" action="">
+			  <table height="100%" width="100%" cellspacing="0">
+				     <tr height="40px" bgcolor="3333cc">
+					   <td align="left
+                       " width="100%"> <img src="image.jpg" width="150px"></td>
+					   <td width="80px" align="right"><input type="text"></td>
+					   <td width="80px"><input type="text"></td>
+                       <td width="20px"><input type="button" value="login"></td>
+				   </tr>
+                   
+				   <tr height="10px" bgcolor="3333cc">
+                      <td></td>
+					   <td  align ="center"><input type="checkbox">keep me logged in</td>
+					   <td colspan="2" align="left">forgotten your password?</td>
+                        
+                  </tr>
+                  
+				   <tr  bgcolor="#edf0f5" height="500px" width="100%">
+				       <td style="width:100%" valign="top" align="center">	
+			    <table  border="0" width="80%"><br><br>
+				   <tr>
+                        <td><h2>Facebook helps you connect and share with the people in your life<h2></td>    
+                   </tr>
+                    <tr>
+					     <td  align="center"><img src="fb.png"  height="80%" size="100%"" width="60%"></td>
+				    </tr>
+                </table>
+				        </td>
+                            
+		                 <td style="width:80%"" colspan="3" valign="top" align="right"><br><br><h1><center>Create an account</center></h1><br><br>	
+		        <table  border="0" width="100%">
+                      <tr>
+				         <td colspan="3">it's free and always will be</td>
+			          </tr>
+			           <tr>
+				           <td><input type="text" id="name" name="fname" placeholder="first name"size="20px"width="20px"></td>
+                           <td><input type="text" id="name1" name="lname" placeholder="sure name"size="20px"width="20px"></td>
+                           <td></td>
+			           </tr>
+                       <tr>
+                           <td><label id=a1 class="x1"></td>
+                           <td><label id=a2 class="x2"></td>
+                           <td></td>
+                           </tr>
+                       <tr>
+				            <td colspan="3"><input type="text" id="mail1" name="mailid" placeholder="Email or mobile number"size="48px"width="48px"></td>
+			           </tr>
+                       <tr>
+                           <td colspan="3"><label id=a3 class="x3"></label></td>
+                      </tr>
+			            <tr>
+				            <td colspan="3"><input type="text" id="rmail" name="rmailid" placeholder="Re-enter email or mobile number"size="48px"width="48px"></td>
+			           </tr>
+                       <tr>
+                           <td colspan="3"><label id="a4" class="x4"></label></td>
+                       </tr>    
+			            <tr>
+				             <td colspan="3"><input type="text"id="npass" name="pass" placeholder="New password"size="48px"width="48px"></td>
+			            </tr>
+                        <tr>
+                            <td colspan="3"><label id="a5" class="x5"></label></td>
+                        </tr>    
+			            <tr>
+				             <td><label>Birthday</label></td>
+                             <td colspan="2"></td>
+                        </tr>    
+			             <tr>
+				             <td size="10px"><select name="day"><option>day<option>1<option>2<option>3<option>4</select></td>
+				             <td size="10px"><select name="month"><option>month<option>jan<option>feb<option>mar<option>apr<option>may<option>jun<select></td>
+				             <td><select name="year"><option>year<option>2010<option>2011<option>2012<option>2013<option>2014<option>2015</select></td>
+			             </tr>
+                         <tr><td colspan="3"><label id="a6" class="x6"></label></td>
+                        
+                         </tr>
+			             <tr>
+                             <td><input type="radio" name="sex"value="male">Male</td>
+				             <td><input type="radio" name="sex"value="female">Female</td>
+                             <td></td>
+                         </tr>
+                         <tr>
+                             <td><label id="a9" class="x9"></label></td>
+                             <td></td>
+                             <td></td>
+                          <tr>
+                              <td colspan="3"><font size="2">By clicking create an account,you agree to out Terms and that you have read our Data Policy,including our Cookie Use
+                                        </font></td>
+                          </tr>
+                           <tr>
+                               <td align="center" colspan="3"><input type="button" style="background-color:#77b55a" value="Create an account" onclick="click_me()"></td>-->
+                              <!-- <td align="center" colspan="3"><input type="button" style="background-color:#77b55a" value="Create an account" ></td>-->            </tr>
+			 </table>
+			           </td>
+                       </tr>
+             </table>
+             </form>				
+	</body>
+</html>
