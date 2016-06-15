@@ -1,0 +1,161 @@
+<html>
+    <head>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+<?php $this->load->helper('url');?>
+  </head>
+        <body>
+            <div class="container_fluid">
+  <!--firstrow -->              
+            <div class="row">
+                <div class="col-md-12" style="background-color:#3b5998">
+                    
+                 <div class="col-md-offset-1 col-md-3"><img style="" class="img-responsive" src="<?php
+                 echo base_url('images/images.png');?>"></div>
+                   <div class="col-md-offset-3 col-md-5">
+                     
+                  <form role="form" method="post" action="index.php/Welcome/fblogin">
+                        <div class="col-md-5">
+                        <label class="lab">email or phone</label>
+                        <input class="headinp" type="text" class="form-control" name="email" value="">
+                        <br/><a href="AppController/forgotPassword" style="color:skyblue">Forgotten your password</a>
+                        </div>
+                       <div class="col-md-5">
+                        <label class="lab">Password</label>
+                        <input class="headinp" type="password" class="form-control" name="pass" value="">
+                        <br/><input type="checkbox" class="form-group"><label class="lab2">keep me logged in</label>
+                        </div>
+                         <div class="col-md-2"><br>
+                         <button class="btn btn-primary btn-sm" type="submit" onclick="">login</button></div>
+        </form>
+                    </div>
+                   </div>
+              </div> 
+            </div>	
+<!--secondrow -->                
+            <div class="row">
+               <div class="col-md-12">
+               <div class="col-md-12" style="background-color:#d1d0ce">
+               <div class="col-md-6">
+               <b><font face="verdana">
+                <br><br><br>Facebook helps you connect and share with the people in your life.
+               </b><br><br><br><br>
+               <div class="col-md-offset-2 col-md-5">
+               <img width="100%"class="img-responsive" src="<?php
+               echo base_url('images/fb.png');?>"></font></div>
+               </div> 
+			   
+			   
+            <div class="col-md-6">
+			 <form role="form" method="post" action="index.php/Welcome/fbregtr">
+           <!-- <div class="col-md-12"><br/>-->
+            <h1><b>Create an account</b></h1>
+            <h5>it's free and always will be</h5>
+           
+              <div class="col-md-4 form-group"><input type="text" class="form-control" placeholder="firstname" name="fname" id="firstname"></div>
+              <div class="col-md-4 form-group"><input type="text" class="form-control" placeholder="surename" name="sname" id="surename"></div>
+              <div class="col-md-8 form-group"><input type="text" class="form-control" placeholder="Email" name="mailid" id="mail"></div>
+              <div class="col-md-8 form-group"><input type="text" class="form-control" placeholder="Re-enter your email" name="rmailid" id="remail"></div>
+              <div class="col-md-8 form-group"><input type="text"class="form-control" placeholder="password" name="passid" id="pass"></div>
+			  
+              <div class="col-md-8"><label id="dob">Date of birth:</label><br>
+              
+                <div class="col-md-3"><select class="form-control" name="dy"id="day">
+                                      <option>day</option>
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                      <option>6</option>
+                                      <option>7</option>
+                                      <option>8</option>
+                                      <option>9</option>
+                                      <option>10</option>
+                                      <option>11</option>
+                                      <option>12</option>
+                                      <option>13</option>
+                                      <option>14</option>
+                                      <option>15</option>
+                                      <option>16</option>
+                                      <option>17</option>
+                                      <option>18</option>
+                                      <option>19</option>
+                                      <option>20</option>
+                                      <option>21</option>
+                                      <option>22</option>
+                                      <option>23</option>
+                                      <option>24</option>
+                                      <option>25</option>
+                                      <option>26</option>
+                                      <option>27</option>
+                                      <option>28</option>
+                                      <option>29</option>
+                                      <option>30</option>
+                                      <option>31</option>
+                                      
+                                     </select></div>
+                <div class="col-md-3 form-group"><select class="form-control" name="mth"id="month">
+                                      <option>month</option>
+                                      <option>jan</option>
+                                      <option>feb</option>
+                                      <option>mar</option>
+                                      <option>apr</option>
+                                      <option>may</option>
+                                      <option>june</option>
+                                      <option>july</option>
+                                      <option>auguest</option>
+                                      <option>sept</option>
+                                      <option>oct</option>
+                                      <option>nov</option>
+                                      <option>dec</option>
+                                      </select></div>
+                <div class="col-md-3 form-group"><select class="form-control"name="yr" id="year">
+                                   <option>year</option>
+                                   <option>2017</option>
+                                   <option>2016</option>
+                                   <option>2015</option>
+                                   <option>2014</option>
+                                   <option>2013</option>
+                                   <option>2012</option>
+                                   <option>2011</option>
+                                   <option>2010</option>
+                                   <option>2000</option>
+                                   <option>1999</option>
+                                   <option>1998</option>
+                                   <option>1997</option>
+                                   <option>1996</option> 
+                                   <option>1995</option>
+                                   </select> </div>
+             			  
+              <div class="col-md-12 form-group">
+              <input type="radio" class="" name="gender" id="male" name=male>Male
+              <input type="radio" class="" name="gender"id="female" name=female>Female</div>
+			  
+            <!--  <div class="col-md-offset-8">-->
+              <div class="col-md-12 form-group">
+                 <button type="submit" class="col-sm-6 btn btn-success">Create an account</button></div>
+				 
+				 
+              <div class="col-md-12">
+             <p class="">By clicking create an account,you agree to our<a href="/legal/terms" target="_blank" rel="nofollow">Terms</a>and that you have read our
+             <a href="/about/privacy" target="_blank" rel="nofollow">Date policy</a>,including our<a href="/help/cookies" target="_blank" rel="nofollow">Coockie Use </a></p>
+              </div>
+              </div>   
+         </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12" style="background-color:#d1d0ce"><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+    </div> 
+    </div>
+<!--  </div>
+   </div>	-->
+ </body>
+ </html>
