@@ -13,7 +13,7 @@
      <form name="login" method="post" action="">
          <div class="container_fluid">
              <div class="row">
-                 <div class="col-md-12"" style="background-color:#3333cc">
+                 <div class="col-md-12" style="background-color:#3333cc">
                   <div class="col-md-12">
                       <div class="col-md-offset-2 col-md-2"><img style="" class="image-responsive" src="<?php 
                       echo base_url('images/fbl.jpg');?>">
@@ -31,7 +31,7 @@
                     <div class="col-md-offset-4 col-md-5" style="background-color:#ffffff">
                       
                         <center><h3>Login to facebook</h3></center>
-                   <!--<input type="text" class="form-control" placeholder="email address or phone number" id="mail">  -->
+                   <input type="text" class="form-control" placeholder="email address or phone number" id="mail">  -->
                    <div class="col-md-0">
                    <div class="col-md-offset-0 col-md-1"><label>Username</label></div>
                   

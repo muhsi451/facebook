@@ -30,21 +30,22 @@ function verifymail($data)
 {
     $data['active']=0;
     
-    $this->db->select(email,hash,active);
+    $this->db->select('email','hash','active');
     $this->db->from('login');
-    $this->db->where($user);
+    $this->db->where($data);
     $query=$this->db->get();
-    
-     
-    $query="select email,hash,active from login where mailid='".$email."' AND hash='".$hash."' AND active='0'";
+    //print_r($query);
+   // $a=$query->num_rows();
+    // echo $a;
+    //$query="select email,hash,active from login where mailid='".$email."' AND hash='".$hash."' AND active='0'";
      //$match=mysql_num_rows($search);
     // echo $match;
-     if($query->num_rows()==1)
+  if($query->num_rows()==1)
      {
-         $rmsg=array();
-         $this->db->set('active=1',$data['active'])
-         ->where('email','password'and $data[mailid],$data[passid])
-         ->update('login');
+        // $rmsg=array();
+         $this->db->set('active',1,false);
+         $this->db->where($data);
+         $this->db->update('login');
          $rmsg[0]['msg']="Your account has been activated, you can now login";
          
        // $udt=("update login set active='1' where mailid='".$email."' AND hash='".$hash."' AND active='0'") ; 
@@ -60,9 +61,9 @@ function verifymail($data)
 function selectuser($data)
 {
   
-    $email=$data['mailid'];
-    $password=$data['passid'];
-    $hash=$data['hash'];
+    /*$email=$data['email'];
+    $password=$data['pass'];
+    $hash=$data['hash'];*/
    //print_r($response);  
     
     $mail=$data['email'];
@@ -86,13 +87,13 @@ function selectuser($data)
                 
             //$password = rand(1000,5000);
           // $sql="insert into login(email,password,hash)values('$email','$password','$hash')";
-          $data=array(
-              'email'=>$mailid,
-              'password'=>$passid,
+         /* $data=array(
+              'email'=>$email,
+              'password'=>$pass,
               'hash'=>$hash,
           );
-          $this->db->insert('login', $data);
-       if(response==1)
+          $this->db->insert('login', $data);*/
+     /*  if(response==1)
         {
              $usr[0]['ResponseCode']=500;
              $usr[0]['msg']="activate";
@@ -102,7 +103,7 @@ function selectuser($data)
                $usr[0]['ResponseCode']=212;
                $usr[0]['msg']="already taken";
         }
-            
+        */    
               
           } 
             else

@@ -114,14 +114,14 @@ public function sendmail($hash,$email)
     $config['protocol']='smtp';
     $config['smtp_host']='ssl://smtp.googlemail.com';
     $config['smtp_port']='465';
-    $config['smtp_user']='muhsi154@gmail.com';
-    $config['smtp_pass']='1948469604';
+    $config['smtp_user']='muhsi5vrn@gmail.com';
+    $config['smtp_pass']='muhsina555';
     $config['mailtype']='html';
     $config['charset']='utf8';
     $config['wordwrap']=TRUE;
     $config['newline']="\r\n";
     $this->email->initialize($config);
-    $this->email->from('muhsi154@gmail.com','muhsina');
+    $this->email->from('muhsi5vrn@gmail.com','muhsina');
     $this->email->to('safnasash@gmail.com');
     $subject="email verification";
     $this->email->subject($subject);
@@ -138,17 +138,17 @@ public function sendmail($hash,$email)
     }
     
 } 
-public function verify($data)
+public function verify()
 {
   if(isset($_REQUEST['email'])&&isset($_REQUEST['hash']))  
   {
     
-         $email=$this->input->get_post('email');
-         $hash=$this->input->get_post('hash');
-         echo $hash;
-       /*  $this->load->model('Add_user');
+         $data['email']=$this->input->get_post('email');
+         $data['hash']=$this->input->get_post('hash');
+        // echo $hash;
+         $this->load->model('Add_user');
          $rmsg=$this->Add_user->verifymail($data);
-         print_r($rmsg);*/
+         print_r($rmsg);
         // $rmsg=array("msg"=>"verifydata","status"=>204);
    } 
    else 

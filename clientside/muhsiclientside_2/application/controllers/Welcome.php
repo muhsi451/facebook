@@ -82,24 +82,24 @@ public function fbregtr()
 		$result = file_get_contents($url, false, $context);
 		$json=json_decode($result,true);
        // echo "json";
-	//	print_r($result);
+		//print_r($result);
         
  
         
-        $responseData['user']=$result;
+        $responseData['user']=$json;
        
        
-       // print_r($json);
+    //  print_r($result);
        /* $resultData=array();
             foreach ($json as $data) {
                 $resultData=$data[];
             }
             $result['user']=$resultData;
          echo $resultData;*/
-         
+ //  if(!empty($json)) {    
 	foreach ($json as $key=>$val)
 			{
-                if( $val['ResponseCode']==200)
+                if($val['ResponseCode']==200)
                     $this->load->view("fbpage.html");
                 else if($val['ResponseCode']==500)     
                     $this->load->view("fbpasserror.php",$responseData); 
@@ -108,6 +108,7 @@ public function fbregtr()
 			    else if($val['ResponseCode']==404)
                     $this->load->view("fbloginfail.html");  
             }
+           // }
        }       
          
 }
