@@ -26,7 +26,8 @@ class Welcome extends CI_Controller {
     {
         $flag=0;
        // return $true;
-        if(isset($_REQUEST["mailid"])&&isset($_REQUEST["passid"])&&isset($_REQUEST["fname"])&&isset($_REQUEST["sname"])&&isset($_REQUEST["dy"])&&isset($_REQUEST["mth"])&&isset($_REQUEST["yr"])&&isset($_REQUEST["gender"])&&isset($_REQUEST["rmailid"]))
+        
+        if(isset($_REQUEST["mailid"])&&isset($_REQUEST["passid"])&&isset($_REQUEST["fname"])&&isset($_REQUEST["sname"])&&isset($_REQUEST["dy"])&&isset($_REQUEST["mth"])&&isset($_REQUEST["yr"])&&isset($_REQUEST["gender"])&&isset($_REQUEST["rmailid"])&&isset($_REQUEST["propic"]))
         {
           // echo "reached service";
           // $errorMsg=array("msg" =>"invalid","status" =>500 );
@@ -39,11 +40,11 @@ class Welcome extends CI_Controller {
                     'month'=>$this->input->get_post('mth'),
                     'year'=>$this->input->get_post('yr'),
                     'gender'=>$this->input->get_post('gender'),
-                   
+                                     
                    
                    );
              $data['hash']=$this->input->get_post('hash');      
-                
+             $data['profile_pic']=$this->input->get_post('propic');   
             $i=$this->input->get_post('rmailid');
             $letter="/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i";
             $passletter="/^(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%])[0-9A-Za-z!@#$%]{6,15}$/";
@@ -85,7 +86,9 @@ class Welcome extends CI_Controller {
          if($flag==0)
            
              {  
-                    $data['hash']=md5(rand(0,1000));     
+                    $data['hash']=md5(rand(0,1000));
+                    $data['profile_pic']=$this->input->get_post('propic'); 
+                         
                     $this->load->model('Add_user');
                     $response=$this->Add_user->adduser($data);
                   
@@ -103,7 +106,7 @@ class Welcome extends CI_Controller {
          else
          {         // print_r($_REQUEST);
                     $response=array("msg"=>"no data recieved","status"=>201);
-                     echo "not satisfied";
+                   //  echo "not satisfied";
          }
          echo json_encode($response); 
          

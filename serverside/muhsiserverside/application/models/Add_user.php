@@ -7,7 +7,7 @@ function adduser($USER)
 	  $USER[$j]=$this->db->escape($USER[$j]);
       $value=implode(',',$USER);
      // $this->db->query("call regstrn({$value})");
-	 if($this->db->query("call regstrn({$value})"))
+	 if($this->db->query("call registration({$value})"))
      {
        $response=array("msg"=>"inserted successfully");  
      }
